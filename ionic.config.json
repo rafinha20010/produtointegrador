@@ -5,11 +5,11 @@
   },
   "type": "angular",
   "server": {
-    "proxy" : {
-      "/api" : {
-        "target" : "https://esp32-mongodb-idev3.onrender.com",
-        "chanceOrigin": true,
-        "secure": false
+    "proxy": {
+      "/api": {
+        "target": "https://esp32-mongodb-idev3.onrender.com",
+        "secure": false,
+        "changeOrigin": true
       }
     }
   }

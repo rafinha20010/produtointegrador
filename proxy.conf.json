@@ -1,9 +1,0 @@
-{
-
-      "/api" : {
-        "target" : "https://esp32-mongodb-idev3.onrender.com",
-        "chanceOrigin": true,
-        "secure": false,
-        "logLevel": "info"
-      }
-    }

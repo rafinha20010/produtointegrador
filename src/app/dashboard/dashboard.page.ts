@@ -15,14 +15,13 @@ export class DashboardPage implements OnInit {
     this.carregarDados()
   }
 
-  carregarDados():any {
+  carregarDados():any{
     this.apiService.getSensores().subscribe({
-      next: (data: any[]) => {
-        console.log(data)
+      next: (data) => {
+        console.log(data);
       }, error: (err) => {
-        console.log(err)
+        console.error('Erro ao carregar dados dos sensores', err)
       }
-    });
+    })
   }
-
 }
