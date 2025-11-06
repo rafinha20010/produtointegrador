@@ -1,0 +1,152 @@
+.dashboard-content {
+    --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    .content-wrapper {
+      padding: 16px;
+      padding-bottom: 32px;
+    }
+  }
+  
+  // Cards de Status
+  .status-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .status-card {
+    margin: 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
+    ion-card-content {
+      text-align: center;
+      padding: 20px 16px;
+    }
+    
+    .card-icon {
+      font-size: 36px;
+      color: var(--ion-color-primary);
+      margin-bottom: 8px;
+    }
+    
+    h3 {
+      margin: 8px 0 4px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ion-color-dark);
+    }
+    
+    p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--ion-color-medium);
+    }
+    
+    &.active {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      
+      .card-icon {
+        color: white;
+      }
+      
+      h3, p {
+        color: white;
+      }
+    }
+  }
+  
+  // Card de Data
+  .date-card {
+    margin: 0 0 20px 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
+    ion-card-header {
+      padding-bottom: 8px;
+    }
+    
+    ion-card-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    
+    ion-card-subtitle {
+      font-size: 14px;
+      margin-top: 4px;
+    }
+    
+    .custom-datetime {
+      margin: 16px 0;
+      border-radius: 12px;
+      background: var(--ion-color-light);
+      padding: 8px;
+    }
+    
+    .load-button {
+      margin-top: 16px;
+      --border-radius: 12px;
+      height: 48px;
+      font-weight: 600;
+      text-transform: none;
+    }
+  }
+  
+  // Card de Ações
+  .actions-card {
+    margin: 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
+    .actions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    
+    .action-btn {
+      --border-radius: 12px;
+      height: 56px;
+      font-weight: 500;
+      text-transform: none;
+      
+      ion-icon {
+        font-size: 20px;
+      }
+    }
+  }
+  
+  // Header customizado
+  ion-header {
+    ion-toolbar {
+      --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --color: white;
+      
+      ion-title {
+        font-weight: 600;
+      }
+      
+      ion-button {
+        --color: white;
+      }
+    }
+  }
+  
+  // Responsividade
+  @media (min-width: 768px) {
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    
+    .status-cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .actions-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }

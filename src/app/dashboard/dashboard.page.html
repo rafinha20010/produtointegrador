@@ -1,13 +1,96 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>Sistema de Irrigação</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="dashboard-content">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">dashboard</ion-title>
+      <ion-title size="large">Dashboard</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="content-wrapper">
+    <!-- Seção de Status Rápido -->
+    <div class="status-cards">
+      <ion-card class="status-card active">
+        <ion-card-content>
+          <ion-icon name="water" class="card-icon"></ion-icon>
+          <h3>Sistema Ativo</h3>
+          <p>Irrigação em andamento</p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="status-card">
+        <ion-card-content>
+          <ion-icon name="thermometer" class="card-icon"></ion-icon>
+          <h3>28°C</h3>
+          <p>Temperatura</p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="status-card">
+        <ion-card-content>
+          <ion-icon name="water-outline" class="card-icon"></ion-icon>
+          <h3>65%</h3>
+          <p>Umidade do Solo</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Seletor de Data -->
+    <ion-card class="date-card">
+      <ion-card-header>
+        <ion-card-title>Histórico de Irrigação</ion-card-title>
+        <ion-card-subtitle>Selecione uma data para visualizar</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-datetime 
+          presentation="date" 
+          [(ngModel)]="datetime"
+          class="custom-datetime">
+        </ion-datetime>
+        <ion-button 
+          expand="block" 
+          (click)="carregarDadosPorData(datetime)"
+          class="load-button">
+          <ion-icon name="search" slot="start"></ion-icon>
+          Carregar Dados
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Seção de Ações Rápidas -->
+    <ion-card class="actions-card">
+      <ion-card-header>
+        <ion-card-title>Ações Rápidas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="actions-grid">
+          <ion-button fill="outline" class="action-btn">
+            <ion-icon name="play" slot="start"></ion-icon>
+            Iniciar
+          </ion-button>
+          <ion-button fill="outline" class="action-btn" color="danger">
+            <ion-icon name="stop" slot="start"></ion-icon>
+            Parar
+          </ion-button>
+          <ion-button fill="outline" class="action-btn" color="medium">
+            <ion-icon name="settings" slot="start"></ion-icon>
+            Configurar
+          </ion-button>
+          <ion-button fill="outline" class="action-btn" color="tertiary">
+            <ion-icon name="stats-chart" slot="start"></ion-icon>
+            Relatórios
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
